@@ -146,11 +146,31 @@ namespace coen79_lab6
     	    source_ptr = source_ptr->link( );
     	}
     }
-    
-    
-    
-    
-    
-    
+    void list_piece(const node* start_ptr, const node* end_ptr, node*& head_ptr, node*& tail_ptr){
+        head_ptr = tail_ptr = NULL;
+        if (start_ptr == NULL || start_ptr == end_ptr)
+            return;
+        list_head_insert(head_ptr, start_ptr->data());
+        tail_ptr = head_ptr;
+        while(start_ptr != end_ptr && start_ptr != NULL){
+            insert(tail_ptr, start_ptr->data());
+            start_ptr = start_ptr->link();
+            tail_ptr = tail_ptr->link();
+        }
+        return;
+    }
+    size_t list_occurrences(node* head_ptr, const node::value_type& target){
+        size_t count = 0, i;
+        for(i=0;i<list_length(head_ptr);i++){
+            if( list_search(head_ptr, target) != NULL)
+                count++;
+        }
+        return count;
+    }
+    void list_insert_at(Node*& head_ptr, const node::value_type& entry, size_t position){
+        assert(position > 0 && position <= list_length(head_ptr)+1);
+        
+        
+    }
     
 }

@@ -171,7 +171,7 @@
 //   void list_print (const node* head_ptr);
 //     Precondition: head_ptr is the head pointer of a linked list, and
 //     the operator << has been defined for the value_type
-//     Postcondition: The value_type of all the nodes in the linked list are printed
+//     Postcondition: The value of all the nodes in the linked list are printed
 //
 //   node* list_detect_loop (node* head_ptr);
 //     Precondition: head_ptr is the head pointer of a linked list
