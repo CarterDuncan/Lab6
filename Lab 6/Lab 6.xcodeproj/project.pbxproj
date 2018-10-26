@@ -86,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				942E17792183BF4A00137C53 /* Sequence */,
-				942E17842183BF5C00137C53 /* Node */,
 				942E176B2183BF3800137C53 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,13 +112,6 @@
 				942E178B2183BF7200137C53 /* node.h */,
 			);
 			path = Sequence;
-			sourceTree = "<group>";
-		};
-		942E17842183BF5C00137C53 /* Node */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Node;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
