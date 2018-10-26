@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		942E178D2183BF7200137C53 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
-		942E178E2183BF7200137C53 /* node_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178C2183BF7200137C53 /* node_test.cpp */; };
+		061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178C2183BF7200137C53 /* node_test.cpp */; };
+		061177FC2183C6C700E27EA1 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
 		942E17932183BF7B00137C53 /* seq_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178F2183BF7B00137C53 /* seq_test.cpp */; };
 		942E17942183BF7B00137C53 /* sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E17902183BF7B00137C53 /* sequence.cpp */; };
 		942E17952183BF7B00137C53 /* sequence_exam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E17912183BF7B00137C53 /* sequence_exam.cpp */; };
@@ -86,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				942E17792183BF4A00137C53 /* Sequence */,
-				942E17842183BF5C00137C53 /* Node */,
 				942E176B2183BF3800137C53 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,18 +107,11 @@
 				942E17912183BF7B00137C53 /* sequence_exam.cpp */,
 				942E17902183BF7B00137C53 /* sequence.cpp */,
 				942E17922183BF7B00137C53 /* sequence.h */,
-			);
-			path = Sequence;
-			sourceTree = "<group>";
-		};
-		942E17842183BF5C00137C53 /* Node */ = {
-			isa = PBXGroup;
-			children = (
 				942E178C2183BF7200137C53 /* node_test.cpp */,
 				942E178A2183BF7200137C53 /* node.cpp */,
 				942E178B2183BF7200137C53 /* node.h */,
 			);
-			path = Node;
+			path = Sequence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +222,8 @@
 				942E17942183BF7B00137C53 /* sequence.cpp in Sources */,
 				942E17952183BF7B00137C53 /* sequence_exam.cpp in Sources */,
 				942E17932183BF7B00137C53 /* seq_test.cpp in Sources */,
+				061177FC2183C6C700E27EA1 /* node.cpp in Sources */,
+				061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				942E178E2183BF7200137C53 /* node_test.cpp in Sources */,
-				942E178D2183BF7200137C53 /* node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
