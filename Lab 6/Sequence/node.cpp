@@ -169,7 +169,41 @@ namespace coen79_lab6
     }
     void list_insert_at(Node*& head_ptr, const node::value_type& entry, size_t position){
         assert(position > 0 && position <= list_length(head_ptr)+1);
-        
+        size_t i;
+        node* tmp;
+        tmp = head_ptr;
+        for(i=1;i<position-1;i++){
+            tmp = tmp->link();
+        }
+        list_insert(tmp, entry);
+        return;
+    }
+    node::value_type list_remove_at(node*& head_ptr, size_t position){
+        assert(position > 0 && position <= list_length(head_ptr));
+        size_t i;
+        node* tmp;
+        tmp = head_ptr;
+        for(i=1;i<position-1;i++){
+            tmp = tmp->link();
+        }
+        list_remove(tmp);
+        return;
+    }
+    node* list_copy_segment(node* head_ptr, size_t start, size_t finish){
+        assert((1 <= start)&&(start <= finish)&&(finish <= list_length(head_ptr)));
+        node* head = tail = NULL;
+        node* tmp1,tmp2;
+        for(i=1;i<start;i++){
+            tmp1 = tmp1->link();
+        }
+        for(i=start;i<finish;i++){
+            tmp2 = tmp2->link();
+        }
+        list_piece(tmp1, tmp2, head, tail);
+        return head;
+    }
+    void list_remove_dups(node* head_ptr){
+        while 
         
     }
     
