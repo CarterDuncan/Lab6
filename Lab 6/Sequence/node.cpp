@@ -203,7 +203,25 @@ namespace coen79_lab6
         return head;
     }
     void list_remove_dups(node* head_ptr){
-        while 
+        node* current = head_ptr;
+        size_t i,j;
+        for(i=0;i<list_length(head_ptr);i++)
+            for(j=i;j<list_length(head_ptr);j++)
+                if(head_ptr->data() == current->data())
+                    list_remove(current);
+        return;
+    }
+    void list_print (const node* head_ptr){
+        node* current = head_ptr;
+        size_t ;
+        for(i=0;i<list_length(head_ptr);i++){
+            cout << current->data();
+            current = current->link();
+        }
+        return;
+    }
+    void list_print (const node* head_ptr){
+        
         
     }
     
