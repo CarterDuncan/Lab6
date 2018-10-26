@@ -146,7 +146,4 @@ namespace coen79_lab6
     	    source_ptr = source_ptr->link( );
     	}
     }
-
-    //this ocmmit worked 
-    //this commit also worked
 }
