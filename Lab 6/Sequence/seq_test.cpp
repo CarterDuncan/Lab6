@@ -1,7 +1,7 @@
 #include <iostream>
 #include "sequence.h"
 
-// Main Function Stuff
+// Main Function Stuff hello
 
 using namespace std;
 using coen79_lab6::sequence;
