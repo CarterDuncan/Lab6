@@ -235,13 +235,13 @@ namespace coen79_lab6
     {
         node  *slow_p = head_ptr, *fast_p = head_ptr;
         
-        while (slow_p && fast_p && fast_p->next )
+        while (slow_p && fast_p && fast_p->link())
         {
-            slow_p = slow_p->next;
-            fast_p  = fast_p->next->next;
+            slow_p = slow_p->link();
+            fast_p  = fast_p->link()->link();
             if (slow_p == fast_p)
             {
-                printf("Found Loop");
+                cout << "Found Loop";
                 slow_p = head_ptr;
                 return slow_p;
             }
