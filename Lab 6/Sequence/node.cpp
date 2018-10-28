@@ -20,7 +20,8 @@
 //   The data of a node is stored in data_field
 //   and the link to the next node is stored in link_field.
 
-#include "test.hpp"
+#include "node.h"
+#include <iostream>
 #include <cassert>    // Provides assert
 #include <cstdlib>    // Provides NULL and size_t
 
@@ -154,12 +155,15 @@ namespace coen79_lab6
             source_ptr = source_ptr->link( );
         }
     }
-    void list_piece(const node* start_ptr, const node* end_ptr, node*& head_ptr, node*& tail_ptr){
+	void list_piece(node* start_ptr, node* end_ptr, node*& head_ptr, node*& tail_ptr){
         head_ptr = tail_ptr = NULL;
-        if (start_ptr == NULL || start_ptr == end_ptr)
+        if (start_ptr == NULL)
             return;
         list_head_insert(head_ptr, start_ptr->data());
         tail_ptr = head_ptr;
+		if(start_ptr != end_ptr){
+			start_ptr = start_ptr->link();
+		}
         while(start_ptr != end_ptr && start_ptr != NULL){
             list_insert(tail_ptr, start_ptr->data());
             start_ptr = start_ptr->link();
@@ -168,50 +172,62 @@ namespace coen79_lab6
         return;
     }
     size_t list_occurrences(node* head_ptr, const node::value_type& target){
-        size_t count = 0, i;
-        for(i=0;i<list_length(head_ptr);i++){
-            if( list_search(head_ptr, target) != NULL)
+        size_t count = 0;
+		while(head_ptr != NULL){
+			if(head_ptr->data() == target)
                 count++;
-        }
+			head_ptr = head_ptr->link();
+		}
         return count;
     }
     void list_insert_at(node*& head_ptr, const node::value_type& entry, size_t position){
         assert(position > 0 && position <= list_length(head_ptr)+1);
         size_t i;
-        node* tmp;
-        tmp = head_ptr;
-        for(i=1;i<position-1;i++){
-            tmp = tmp->link();
-        }
-        list_insert(tmp, entry);
+		if(position == 1){
+			list_head_insert(head_ptr, entry);
+		}else{
+			node* tmp;
+			tmp = head_ptr;
+			for(i=1;i<position-1;i++){
+				tmp = tmp->link();
+			}
+			list_insert(tmp, entry);
+		}
         return;
     }
     node::value_type list_remove_at(node*& head_ptr, size_t position){
         assert(position > 0 && position <= list_length(head_ptr));
         size_t i,data;
-        node* tmp;
-        tmp = head_ptr;
-        for(i=1;i<position-1;i++){
-            tmp = tmp->link();
-        }
-        data = tmp->data();
-        list_remove(tmp);
+		if(position == 1){
+			data = head_ptr->data();
+			list_head_remove(head_ptr);
+		}else{
+			node* tmp;
+			tmp = head_ptr;
+			for(i=1;i<position-1;i++){
+				tmp = tmp->link();
+			}
+			data = tmp->data();
+			list_remove(tmp);
+		}
         return data;
     }
-    node* list_copy_segment(node* head_ptr, size_t start, size_t finish){
+	node* list_copy_segment(node* head_ptr, size_t start, size_t finish){
         assert((1 <= start)&&(start <= finish)&&(finish <= list_length(head_ptr)));
-        node* head,tail;
+        node *head, *tail;
         head = NULL;
         tail = NULL;
-        node* tmp1,tmp2;
+		node *tmp1, *tmp2;
         size_t i;
+		tmp1 = head_ptr;
         for(i=1;i<start;i++){
             tmp1 = tmp1->link();
         }
+		tmp2 = tmp1->link();
         for(i=start;i<finish;i++){
             tmp2 = tmp2->link();
         }
-        list_piece(tmp1, tmp2, head, tail);
+		list_piece(tmp1, tmp2, head, tail);
         return head;
     }
     void list_remove_dups(node* head_ptr){
@@ -223,12 +239,45 @@ namespace coen79_lab6
                     list_remove(current);
         return;
     }
-    void list_print (const node* head_ptr){
-        node* current = head_ptr;
-        while(current != NULL){
-            cout << current->data();
-            current = current->link();
-        }
+	void list_print (const node *head_ptr){
+		const node *current;
+		current = head_ptr;
+		if(current == NULL){
+			std::cout << std::endl;
+		}else{
+			while(current != NULL){
+				std::cout << current->data();
+				if(current->link() != NULL){
+					std::cout << ", ";
+				}else{
+					std::cout << std::endl;
+				}
+				current = current->link();
+			}
+		}
         return;
     }
+	
+	node* list_detect_loop (node* head_ptr){
+		node* fast = head_ptr, *slow = head_ptr;
+		
+		while(fast != NULL && fast->link() != NULL){
+			slow = slow->link();
+			fast = fast->link()->link();
+			if(slow == fast){
+				break;
+			}
+		}
+		if(fast == NULL || fast->link() == NULL){
+			return NULL;
+		}
+		slow = head_ptr;
+		while(slow != fast){
+			slow = slow->link();
+			fast = fast->link();
+		}
+		return fast;
+	}
+	
+	
 }
