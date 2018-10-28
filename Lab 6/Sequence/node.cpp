@@ -257,6 +257,7 @@ namespace coen79_lab6
 		}
         return;
     }
+<<<<<<< HEAD
 	
 	node* list_detect_loop (node* head_ptr){
 		node* fast = head_ptr, *slow = head_ptr;
@@ -280,4 +281,23 @@ namespace coen79_lab6
 	}
 	
 	
+=======
+    node* list_detect_loop (node* head_ptr)
+    {
+        node  *slow_p = head_ptr, *fast_p = head_ptr;
+        
+        while (slow_p && fast_p && fast_p->link())
+        {
+            slow_p = slow_p->link();
+            fast_p  = fast_p->link()->link();
+            if (slow_p == fast_p)
+            {
+                cout << "Found Loop";
+                slow_p = head_ptr;
+                return slow_p;
+            }
+        }
+        return NULL;
+    }
+>>>>>>> a801bb5e66600d611230d577c02263fae55118ee
 }
