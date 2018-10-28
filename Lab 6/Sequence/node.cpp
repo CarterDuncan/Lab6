@@ -231,4 +231,21 @@ namespace coen79_lab6
         }
         return;
     }
+    node* list_detect_loop (node* head_ptr)
+    {
+        node  *slow_p = head_ptr, *fast_p = head_ptr;
+        
+        while (slow_p && fast_p && fast_p->next )
+        {
+            slow_p = slow_p->next;
+            fast_p  = fast_p->next->next;
+            if (slow_p == fast_p)
+            {
+                printf("Found Loop");
+                slow_p = head_ptr;
+                return slow_p;
+            }
+        }
+        return NULL;
+    }
 }

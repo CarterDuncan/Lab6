@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178C2183BF7200137C53 /* node_test.cpp */; };
 		061177FC2183C6C700E27EA1 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
 		942E17932183BF7B00137C53 /* seq_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178F2183BF7B00137C53 /* seq_test.cpp */; };
 		942E17942183BF7B00137C53 /* sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E17902183BF7B00137C53 /* sequence.cpp */; };
 		942E17952183BF7B00137C53 /* sequence_exam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E17912183BF7B00137C53 /* sequence_exam.cpp */; };
-		9499614E2183C49700C6A1AE /* node_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178C2183BF7200137C53 /* node_test.cpp */; };
-		9499614F2183C49900C6A1AE /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +49,6 @@
 		942E17832183BF5C00137C53 /* Node */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Node; sourceTree = BUILT_PRODUCTS_DIR; };
 		942E178A2183BF7200137C53 /* node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
 		942E178B2183BF7200137C53 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
-		942E178C2183BF7200137C53 /* node_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = node_test.cpp; sourceTree = "<group>"; };
 		942E178F2183BF7B00137C53 /* seq_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = seq_test.cpp; sourceTree = "<group>"; };
 		942E17902183BF7B00137C53 /* sequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequence.cpp; sourceTree = "<group>"; };
 		942E17912183BF7B00137C53 /* sequence_exam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sequence_exam.cpp; sourceTree = "<group>"; };
@@ -109,7 +105,6 @@
 				942E17912183BF7B00137C53 /* sequence_exam.cpp */,
 				942E17902183BF7B00137C53 /* sequence.cpp */,
 				942E17922183BF7B00137C53 /* sequence.h */,
-				942E178C2183BF7200137C53 /* node_test.cpp */,
 				942E178A2183BF7200137C53 /* node.cpp */,
 				942E178B2183BF7200137C53 /* node.h */,
 			);
@@ -225,7 +220,6 @@
 				942E17952183BF7B00137C53 /* sequence_exam.cpp in Sources */,
 				942E17932183BF7B00137C53 /* seq_test.cpp in Sources */,
 				061177FC2183C6C700E27EA1 /* node.cpp in Sources */,
-				061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -362,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -370,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -378,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -386,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -394,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
