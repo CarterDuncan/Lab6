@@ -1,5 +1,12 @@
 
+<<<<<<< HEAD
 Lab 6/Lab 6.xcodeproj/xcuserdata/vasilisodysseos.xcuserdatad/xcschemes/Node.xcscheme
 Lab 6/Lab 6.xcodeproj/xcuserdata/vasilisodysseos.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 Lab 6/Lab 6.xcodeproj/project.xcworkspace/xcuserdata/vasilisodysseos.xcuserdatad/UserInterfaceState.xcuserstate
 Lab 6/Lab 6.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+=======
+*.xcuserstate
+*.xcscheme
+*.xcbkptlist
+*.xcuserstate
+>>>>>>> Node
