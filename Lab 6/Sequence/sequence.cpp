@@ -55,6 +55,147 @@ namespace coen79_lab6
         init();
         *this = source;
     }
+	
+	//Destructor
+	sequence::~sequence(){
+		list_clear(head_ptr);
+		head_ptr = NULL;
+		tail_ptr = NULL;
+		cursor = NULL;
+		precursor = NULL;
+		many_nodes = 0;
+	}
+	
+	//MODIFICATION MEMBER FUNCTIONS
+	void sequence::start(){
+		cursor = head_ptr;
+	};
+	
+	void sequence::end(){
+		cursor = tail_ptr;
+		if (precursor == NULL){
+			precursor = head_ptr;
+		}
+		if(tail_ptr != head_ptr){
+			while(precursor->link() != cursor){
+				precursor = precursor->link();
+			}
+		}
+	}
+	
+	void sequence::advance(){
+		assert(is_item());
+		if(cursor == tail_ptr){
+			cursor = NULL;
+			precursor = NULL;
+			return;
+		}
+		if(cursor == head_ptr){
+			cursor = cursor->link();
+			precursor = head_ptr;
+			return;
+		}
+		precursor = cursor;
+		cursor = cursor->link();
+	}
+	
+	void sequence::insert(const value_type &entry){
+		if(many_nodes <= 1 || cursor == NULL){
+			list_head_insert(this->head_ptr, entry);
+			cursor = head_ptr;
+			if(tail_ptr == NULL){
+				tail_ptr = cursor;
+			}
+		}else{
+			list_insert(precursor, entry);
+			cursor = precursor->link();
+		}
+		many_nodes++;
+	}
+	
+	void sequence::attach(const value_type &entry){
+		if(cursor == NULL){
+			if(head_ptr == NULL){
+				list_head_insert(head_ptr, entry);
+				tail_ptr = head_ptr;
+				cursor = head_ptr;
+			}else{
+				list_insert(tail_ptr, entry);
+				precursor = tail_ptr;
+				tail_ptr = tail_ptr->link();
+				cursor = tail_ptr;
+			}
+		}else{
+			list_insert(cursor, entry);
+			precursor = cursor;
+			if(cursor == tail_ptr){
+				tail_ptr = tail_ptr->link();
+			}
+			cursor = precursor->link();
+		}
+		many_nodes++;
+	}
+	
+	void sequence::operator =(const sequence& source){
+		if(this == &source){
+			return;
+		}
+		node *source_h, *source_t, *source_c, *source_p;
+		source_h = source.head_ptr;
+		source_t = source.tail_ptr;
+		source_c = source.cursor;
+		source_p = source.precursor;
+		list_clear(head_ptr);
+		many_nodes = 0;
+		list_copy(source.head_ptr, head_ptr, tail_ptr);
+		many_nodes = source.many_nodes;
+		if(source_c != NULL){
+			cursor = list_locate(head_ptr, list_find_node(source_h, source_c));
+		}else{
+			cursor = NULL;
+		}
+		if(source_p != NULL){
+			precursor = list_locate(head_ptr, list_find_node(source_h, source_p));
+		}else{
+			precursor = NULL;
+		}
+	}
+	
+	
+	void sequence::remove_current(){
+		assert(is_item());
+		if (cursor == head_ptr){
+			list_head_remove(head_ptr);
+			cursor = head_ptr;
+		}else{
+			if(cursor == tail_ptr){
+				tail_ptr = precursor;
+				list_remove(precursor);
+				cursor = NULL;
+				precursor = NULL;
+			}else{
+				list_remove(precursor);
+				cursor = precursor->link();
+			}
+		}
+		many_nodes--;
+	}
+	
+	sequence::size_type sequence::size() const{
+		return many_nodes;
+	}
+	
+	bool sequence::is_item() const{
+		if (cursor == NULL){
+			return false;
+		}
+		return true;
+	}
+	
+	sequence::value_type sequence::current() const{
+		assert(is_item());
+		return cursor->data();
+	}
 
     
 }

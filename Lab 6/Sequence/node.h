@@ -246,6 +246,8 @@ namespace coen79_lab6
     void list_print (const node* head_ptr);
     void list_remove_dups(node* head_ptr);
     node* list_detect_loop (node* head_ptr);
+	size_t list_find_node(node* head_ptr, const node* target);
+	const size_t list_find_node(const node* head_ptr, const node* target);
 
 }
 
