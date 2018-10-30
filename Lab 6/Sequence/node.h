@@ -96,6 +96,12 @@
 //     position 2, and so on). If there is no such position, then the null
 //     pointer is returned.
 //
+//	 size_t list_find_node(node* head_ptr, const node* target);
+//	 const size_t list_find_node(const node* head_ptr, const node* target);
+//   See the note (above) about the const version and non-const versions:
+//		Precondition: head_ptr is a pointer to a valid linked list.
+//		Postcondition: The function returns the location of the target node or 0 if it is not found.
+//
 //   void list_head_remove(node*& head_ptr)
 //     Precondition: head_ptr is the head pointer of a linked list, with at
 //     least one node.
@@ -178,7 +184,6 @@
 //     Postcondition: If there is a loop in the linked list, the returned value
 //     is a pointer to the start of the loop. The returned value is NULL if
 //     there is no loop in the list
-//
 //
 // DYNAMIC MEMORY usage by the toolkit:
 //   If there is insufficient dynamic memory, then the following functions throw

@@ -292,9 +292,12 @@ namespace coen79_lab6
 	const size_t list_find_node(const node* head_ptr, const node* target){
 		size_t location = 1;
 		const node *cursor = head_ptr;
-		while(cursor != target){
+		while(cursor != NULL &&cursor != target){
 			cursor = cursor->link();
 			location++;
+		}
+		if(cursor == NULL){
+			return 0;
 		}
 		return location;
 	}
