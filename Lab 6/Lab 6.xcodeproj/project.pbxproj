@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178C2183BF7200137C53 /* node_test.cpp */; };
-		061177FC2183C6C700E27EA1 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
 		942E17932183BF7B00137C53 /* seq_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178F2183BF7B00137C53 /* seq_test.cpp */; };
 		942E17942183BF7B00137C53 /* sequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E17902183BF7B00137C53 /* sequence.cpp */; };
+		94E5FF182187D94500735707 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 942E178A2183BF7200137C53 /* node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,12 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				942E178F2183BF7B00137C53 /* seq_test.cpp */,
-				942E17912183BF7B00137C53 /* sequence_exam.cpp */,
 				942E17902183BF7B00137C53 /* sequence.cpp */,
 				942E17922183BF7B00137C53 /* sequence.h */,
-				942E178C2183BF7200137C53 /* node_test.cpp */,
 				942E178A2183BF7200137C53 /* node.cpp */,
 				942E178B2183BF7200137C53 /* node.h */,
+				942E17912183BF7B00137C53 /* sequence_exam.cpp */,
+				942E178C2183BF7200137C53 /* node_test.cpp */,
 			);
 			path = Sequence;
 			sourceTree = "<group>";
@@ -220,8 +220,8 @@
 			files = (
 				942E17942183BF7B00137C53 /* sequence.cpp in Sources */,
 				942E17932183BF7B00137C53 /* seq_test.cpp in Sources */,
-				061177FC2183C6C700E27EA1 /* node.cpp in Sources */,
 				061177FB2183C6C700E27EA1 /* node_test.cpp in Sources */,
+				94E5FF182187D94500735707 /* node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
