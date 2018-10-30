@@ -84,14 +84,14 @@ namespace coen79_lab6
 	void sequence::advance(){
 		assert(is_item());
 		if(cursor == tail_ptr){
-			cursor == NULL;
-			precursor == NULL;
+			cursor = NULL;
+			precursor = NULL;
 			return;
 		}
 		if(cursor == head_ptr){
 			cursor = cursor->link();
 			precursor = head_ptr;
-			return
+			return;
 		}
 		precursor = cursor;
 		cursor = cursor->link();
@@ -113,7 +113,7 @@ namespace coen79_lab6
 		}else{
 			list_insert(cursor, entry);
 			precursor = cursor;
-			cursor = cursor->link;
+			cursor = cursor->link();
 		}
 	}
 	
@@ -140,7 +140,7 @@ namespace coen79_lab6
 		return many_nodes;
 	}
 	
-	bool sequence::is_item(){
+	bool sequence::is_item() const{
 		if (cursor == NULL){
 			return false;
 		}
@@ -149,7 +149,7 @@ namespace coen79_lab6
 	
 	sequence::value_type sequence::current() const{
 		assert(is_item());
-		return cursor;
+		return cursor->data();
 	}
 
     
